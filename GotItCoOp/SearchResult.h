@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <GooglePlaces/GooglePlaces.h>
+
+@interface PlaceInfo : NSObject
+@property (nonatomic, strong)NSString *name;
+@property (nonatomic, strong)NSString *address;
+@property (nonatomic) BOOL openNow;
+@property (nonatomic) double distance;
+@property (nonatomic, strong)NSString *phoneNumber;
+@property (nonatomic, strong)NSString *website;
+@property (nonatomic, strong)NSString *type;
+@end
 
 @interface SearchResult : NSObject
-
+- (instancetype)initWithPlaceId:(NSString *)placeId openNow:(BOOL)openNow distance:(double)distance;
+- (PlaceInfo *)placeInfo;
+@property (nonatomic, strong, readonly)UIImage *coverPhoto;
 @end

@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchRequest.h"
 
-@interface SecondViewController : UIViewController
+@protocol PlaceRequestDelegate <NSObject>
+- (SearchRequest)getCurrentSearchSetting;
+@end
 
+@interface SecondViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PlaceRequestDelegate>
+@property (nonatomic, readonly)SearchRequest currentSearchRequest;
 
 @end
 

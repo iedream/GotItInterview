@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchResult.h"
 
-@interface PlaceViewController : UIViewController
-
+@interface PlaceViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic, strong)PlaceInfo *placeInfo;
 @end
