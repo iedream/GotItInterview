@@ -34,7 +34,7 @@ NSString *initialPhotoReady = @"initialPhotoReading";
 @implementation SearchResult
 @synthesize coverPhoto = _coverPhoto;
 
-- (instancetype)initWithPlaceId:(NSString *)placeId openNow:(BOOL)openNow distance:(double)distance
+- (instancetype)initWithPlaceId:(NSString *)placeId openNow:(BOOL)openNow distance:(double)distance coordinate:(CLLocationCoordinate2D)coordinate
 {
     self = [super init];
     if (self) {
@@ -44,6 +44,7 @@ NSString *initialPhotoReady = @"initialPhotoReading";
         _placeDetail = [[PlaceInfo alloc] init];
         _placeDetail.openNow = openNow;
         _placeDetail.distance = distance / 1000;
+        _placeDetail.coordinate = coordinate;
         __weak __typeof__(self) weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
              __typeof__(self) strongSelf = weakSelf;

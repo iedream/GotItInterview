@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import <GooglePlaces/GooglePlaces.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "SearchRequest.h"
 #import "SearchResult.h"
 #import "PlaceViewController.h"
@@ -32,6 +33,8 @@ NSString *collectionCellIdentifier = @"MainTableCell";
     [super viewDidLoad];
     
     [GMSPlacesClient provideAPIKey:apiKey];
+    [GMSServices provideAPIKey:apiKey];
+    
     _placeData = [[NSMutableArray alloc] init];
     
     _locationManager = [[CLLocationManager alloc] init];
@@ -184,7 +187,7 @@ NSString *collectionCellIdentifier = @"MainTableCell";
 //            break;
 //        }
         NSString *place_id = placeDict[@"place_id"];
-        SearchResult *placeObject = [[SearchResult alloc] initWithPlaceId:place_id openNow:openNow distance:distance];
+        SearchResult *placeObject = [[SearchResult alloc] initWithPlaceId:place_id openNow:openNow distance:distance coordinate:locationCoord];
         [_placeData addObject:placeObject];
         dispatch_async(dispatch_get_main_queue(), ^{
             [_collectionView reloadData];

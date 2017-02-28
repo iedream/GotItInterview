@@ -205,7 +205,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fco-6H-CP9">
-                                <rect key="frame" x="0.0" y="362" width="375" height="224"/>
+                                <rect key="frame" x="0.0" y="411" width="375" height="224"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ws6-cR-CFx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -224,29 +224,37 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LsO-q1-CPp">
+                                <rect key="frame" x="70" y="243" width="289" height="151"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JTh-Uv-8XU" firstAttribute="top" secondItem="Fco-6H-CP9" secondAttribute="bottom" constant="30" id="05p-Ub-aNP"/>
                             <constraint firstItem="sdO-zz-otI" firstAttribute="leading" secondItem="OnB-rb-vfn" secondAttribute="leadingMargin" constant="10" id="C3W-pY-BJG"/>
                             <constraint firstItem="nhx-0g-d94" firstAttribute="top" secondItem="ZTX-qg-7Qq" secondAttribute="bottom" constant="20" id="E5B-1i-s0P"/>
+                            <constraint firstItem="LsO-q1-CPp" firstAttribute="leading" secondItem="sdO-zz-otI" secondAttribute="trailing" constant="10" id="HEV-HG-HtQ"/>
                             <constraint firstItem="Fco-6H-CP9" firstAttribute="leading" secondItem="OnB-rb-vfn" secondAttribute="leading" constant="10" id="KGY-Vt-qHM"/>
-                            <constraint firstItem="nhx-0g-d94" firstAttribute="height" secondItem="OnB-rb-vfn" secondAttribute="height" multiplier="0.4" id="LQb-ht-Bgb"/>
+                            <constraint firstItem="nhx-0g-d94" firstAttribute="height" secondItem="OnB-rb-vfn" secondAttribute="height" multiplier="0.3" id="LQb-ht-Bgb"/>
                             <constraint firstItem="nhx-0g-d94" firstAttribute="leading" secondItem="OnB-rb-vfn" secondAttribute="leadingMargin" constant="10" id="PFd-Jr-fNB"/>
                             <constraint firstAttribute="trailing" secondItem="Fco-6H-CP9" secondAttribute="trailing" constant="10" id="T2w-bb-ffO"/>
-                            <constraint firstItem="Fco-6H-CP9" firstAttribute="height" secondItem="OnB-rb-vfn" secondAttribute="height" multiplier="0.4" id="TVM-zK-1WD"/>
+                            <constraint firstItem="Fco-6H-CP9" firstAttribute="height" secondItem="OnB-rb-vfn" secondAttribute="height" multiplier="0.3" id="TVM-zK-1WD"/>
                             <constraint firstItem="nhx-0g-d94" firstAttribute="trailing" secondItem="OnB-rb-vfn" secondAttribute="trailingMargin" constant="10" id="c7W-1u-SGv"/>
+                            <constraint firstItem="Fco-6H-CP9" firstAttribute="top" secondItem="LsO-q1-CPp" secondAttribute="bottom" constant="10" id="cTO-gB-g80"/>
+                            <constraint firstItem="LsO-q1-CPp" firstAttribute="trailing" secondItem="OnB-rb-vfn" secondAttribute="trailingMargin" constant="10" id="iea-Ne-VrN"/>
+                            <constraint firstItem="LsO-q1-CPp" firstAttribute="top" secondItem="nhx-0g-d94" secondAttribute="bottom" constant="10" id="m0p-E5-EXd"/>
                             <constraint firstItem="sdO-zz-otI" firstAttribute="centerY" secondItem="OnB-rb-vfn" secondAttribute="centerY" id="vZk-2w-x0k"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dataView" destination="nhx-0g-d94" id="fqQ-tg-mj7"/>
+                        <outlet property="mapView" destination="LsO-q1-CPp" id="bD0-NE-Sgi"/>
                         <outlet property="photoView" destination="Fco-6H-CP9" id="hPA-PN-H9U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJO-wy-OuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="-321"/>
+            <point key="canvasLocation" x="1424.8" y="-321.58920539730138"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

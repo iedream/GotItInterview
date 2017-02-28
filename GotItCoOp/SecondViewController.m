@@ -31,6 +31,8 @@
     
     SearchRequest defaultSearchSetting = {NO, -1, NO, NO, RANK_BY_PROMINENCE};
     _currentSearchRequest = defaultSearchSetting;
+    
+    _distanceTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,6 +82,12 @@
 
 - (SearchRequest)getCurrentSearchSetting {
     return _currentSearchRequest;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

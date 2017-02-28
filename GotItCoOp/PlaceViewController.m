@@ -7,12 +7,14 @@
 //
 
 #import "PlaceViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 NSString *photoCellIdentifier = @"PhotoCollectionCell";
 
 @interface PlaceViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *dataView;
 @property (weak, nonatomic) IBOutlet UICollectionView *photoView;
+@property (weak, nonatomic) IBOutlet UIView *mapView;
 
 @property (strong, nonatomic) NSArray *photoData;
 
@@ -30,6 +32,7 @@ NSString *photoCellIdentifier = @"PhotoCollectionCell";
     
     [_dataView setText:@"No Data Available"];
     [self formatText];
+    [self loadMapView];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refresh:) name:@"newPhotoData" object:nil];
     // Do any additional setup after loading the view.
@@ -64,6 +67,16 @@ NSString *photoCellIdentifier = @"PhotoCollectionCell";
         resultString = [NSString stringWithFormat:@"%@Currently Close\n\n", resultString];
     }
     [_dataView setText:resultString];
+}
+
+- (void)loadMapView {
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:_placeInfo.coordinate zoom:17];
+    GMSMapView *mapView = [GMSMapView mapWithFrame:_mapView.bounds camera:camera];
+    
+    GMSMarker *marker = [GMSMarker markerWithPosition:_placeInfo.coordinate];
+    marker.icon = [UIImage imageNamed:@"mark.png"];
+    marker.map = mapView;
+    [_mapView addSubview:mapView];
 }
 
 - (void)refresh:(NSNotification *)notif {

@@ -18,6 +18,7 @@
 		4F79C5381E64F7AA00D31FDD /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F79C5371E64F7AA00D31FDD /* SearchResult.m */; };
 		4F79C53C1E65121000D31FDD /* imageComingSoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F79C53B1E65121000D31FDD /* imageComingSoon.png */; };
 		4F79C5401E651FB900D31FDD /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F79C53F1E651FB900D31FDD /* PlaceViewController.m */; };
+		4F79C5461E65669100D31FDD /* mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F79C5451E65669100D31FDD /* mark.png */; };
 		A21A96E48DDE061617E13A40 /* libPods-GotItCoOp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245DB9A0D5662A027BBF8236 /* libPods-GotItCoOp.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		4F79C53B1E65121000D31FDD /* imageComingSoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imageComingSoon.png; path = ../../Desktop/imageComingSoon.png; sourceTree = "<group>"; };
 		4F79C53E1E651FB900D31FDD /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		4F79C53F1E651FB900D31FDD /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		4F79C5451E65669100D31FDD /* mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mark.png; path = ../../Downloads/mark.png; sourceTree = "<group>"; };
 		AA1534BEA38B680E0405F0C9 /* Pods-GotItCoOp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotItCoOp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GotItCoOp/Pods-GotItCoOp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 		4F79C50D1E64D1EF00D31FDD = {
 			isa = PBXGroup;
 			children = (
+				4F79C5451E65669100D31FDD /* mark.png */,
 				4F79C53B1E65121000D31FDD /* imageComingSoon.png */,
 				4F79C5181E64D1EF00D31FDD /* GotItCoOp */,
 				4F79C5171E64D1EF00D31FDD /* Products */,
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F79C52C1E64D1EF00D31FDD /* LaunchScreen.storyboard in Resources */,
+				4F79C5461E65669100D31FDD /* mark.png in Resources */,
 				4F79C53C1E65121000D31FDD /* imageComingSoon.png in Resources */,
 				4F79C5291E64D1EF00D31FDD /* Assets.xcassets in Resources */,
 				4F79C5271E64D1EF00D31FDD /* Main.storyboard in Resources */,
