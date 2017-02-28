@@ -62,6 +62,12 @@ NSString *collectionCellIdentifier = @"MainTableCell";
     SecondViewController *secondViewController = self.tabBarController.viewControllers.lastObject;
     _delegate = secondViewController;
     
+    _searchBar.delegate = self;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tap];
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refresh:) name:@"initialPhotoReading" object:nil];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -226,6 +232,16 @@ NSString *collectionCellIdentifier = @"MainTableCell";
 
     }
     _placeData = newPlaceData;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_searchBar resignFirstResponder];
+    [self refreshPlaces:_searchBar];
+}
+
+- (void)dismissKeyboard
+{
+    [_searchBar resignFirstResponder];
 }
 
 @end

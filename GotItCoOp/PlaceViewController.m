@@ -86,6 +86,7 @@ NSString *photoCellIdentifier = @"PhotoCollectionCell";
     GMSMarker *marker = [GMSMarker markerWithPosition:_placeInfo.coordinate];
     marker.icon = [UIImage imageNamed:@"mark.png"];
     marker.map = mapView;
+    [_mapView setClipsToBounds:YES];
     [_mapView addSubview:mapView];
 }
 

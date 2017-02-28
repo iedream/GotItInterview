@@ -33,6 +33,10 @@
         }
     }
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tap];
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     _cateogryPickerView.delegate = self;
@@ -98,6 +102,11 @@
     
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)dismissKeyboard
+{
+    [_distanceTextField resignFirstResponder];
 }
 
 @end
