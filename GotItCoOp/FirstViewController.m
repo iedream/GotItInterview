@@ -32,6 +32,16 @@ NSString *collectionCellIdentifier = @"MainTableCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeCollectionBackground.png"]];
+    backgroundImageView.frame = self.view.frame;
+    [self.view addSubview:backgroundImageView];
+    for (UIView *view in self.view.subviews.copy) {
+        if (view != backgroundImageView) {
+            [self.view bringSubviewToFront:view];
+            
+        }
+    }
+    
     [GMSPlacesClient provideAPIKey:apiKey];
     [GMSServices provideAPIKey:apiKey];
     
@@ -116,11 +126,7 @@ NSString *collectionCellIdentifier = @"MainTableCell";
     
     NSString *searchText = _searchBar.text;
     searchText = [searchText stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
-    if (searchRequest.rank == RANK_BY_DISTANCE && !searchRequest.hasType && searchText.length == 0) {
-        return;
-    }
-    
+
     [self searchPlaces:searchRequest searchText:searchText];
 }
 
@@ -134,18 +140,10 @@ NSString *collectionCellIdentifier = @"MainTableCell";
     NSString *url = [NSString stringWithFormat:@"%@location=%f,%f&key=%@", baseUrl, _currentLocation.latitude,_currentLocation.longitude, apiKey];
     
 
-    if (searchRequest.rank == RANK_BY_PROMINENCE) {
-        int radius = 50000;
-        if (searchRequest.hasBoundary) {
-            radius = searchRequest.radius;
-        }
-        url = [NSString stringWithFormat:@"%@&radius=%i", url, radius];
-    } else {
-        url = [NSString stringWithFormat:@"%@&rankby=distance", url];
-    }
-    
+    BOOL needSorting = searchRequest.rank == RANK_BY_DISTANCE;
     if(searchRequest.hasType) {
         url = [NSString stringWithFormat:@"%@&type=%@", url, [SearchRequestHelper stringForCategoryType:searchRequest.type]];
+        needSorting = NO;
     }
     
     if (searchRequest.wantOpenNow) {
@@ -154,6 +152,18 @@ NSString *collectionCellIdentifier = @"MainTableCell";
     
     if (searchText.length > 0) {
         url = [NSString stringWithFormat:@"%@&keyword=%@", url, searchText];
+        needSorting = NO;
+    }
+
+    
+    if (searchRequest.rank == RANK_BY_PROMINENCE || needSorting) {
+        int radius = 50000;
+        if (searchRequest.hasBoundary) {
+            radius = searchRequest.radius;
+        }
+        url = [NSString stringWithFormat:@"%@&radius=%i", url, radius];
+    } else {
+        url = [NSString stringWithFormat:@"%@&rankby=distance", url];
     }
     
     __weak __typeof__(self) weakSelf = self;
@@ -166,13 +176,13 @@ NSString *collectionCellIdentifier = @"MainTableCell";
         if (httpResponse.statusCode == 200) {
             NSArray *listOfPlaces = json[@"results"];
             __typeof__(self) strongSelf = weakSelf;
-            [strongSelf processPlacesResult:listOfPlaces searchRequest:searchRequest];
+            [strongSelf processPlacesResult:listOfPlaces searchRequest:searchRequest needSorting:needSorting];
         }
     }];
     [task resume];
 }
                               
-- (void)processPlacesResult:(NSArray *)listOfPlaces searchRequest:(SearchRequest)searchRequest{
+- (void)processPlacesResult:(NSArray *)listOfPlaces searchRequest:(SearchRequest)searchRequest needSorting:(BOOL)needSorting{
     [_placeData removeAllObjects];
     for (NSDictionary *placeDict in listOfPlaces) {
         NSDictionary *locationDict = placeDict[@"geometry"][@"location"];
@@ -183,19 +193,39 @@ NSString *collectionCellIdentifier = @"MainTableCell";
         }
         
         BOOL openNow = [placeDict[@"opening_hours"][@"open_now"] boolValue];
-//        if (searchRequest.wantOpenNow && openNow) {
-//            break;
-//        }
+
         NSString *place_id = placeDict[@"place_id"];
         SearchResult *placeObject = [[SearchResult alloc] initWithPlaceId:place_id openNow:openNow distance:distance coordinate:locationCoord];
-        [_placeData addObject:placeObject];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_collectionView reloadData];
-        });
+        if (needSorting) {
+            [self sort:placeObject];
+        }else {
+            [_placeData addObject:placeObject];
+        }
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [_collectionView reloadData];
     });
+}
+
+- (void)sort:(SearchResult *)currentNode {
+    BOOL moveToRight = NO;
+    NSMutableArray *newPlaceData = [[NSMutableArray alloc] init];
+    for (int i = 0; i <= _placeData.count; i++) {
+        if (moveToRight) {
+            newPlaceData[i] = _placeData[i-1];
+            
+        }else if (i < _placeData.count && [currentNode placeInfo].distance < [_placeData[i] placeInfo].distance) {
+            moveToRight = YES;
+            newPlaceData[i] = currentNode;
+        }else if  (i < _placeData.count){
+            newPlaceData[i] = _placeData[i];
+        }
+    }
+    if (!moveToRight) {
+        [newPlaceData addObject:currentNode];
+
+    }
+    _placeData = newPlaceData;
 }
 
 @end

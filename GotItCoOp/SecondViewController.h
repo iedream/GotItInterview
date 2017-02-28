@@ -13,7 +13,7 @@
 - (SearchRequest)getCurrentSearchSetting;
 @end
 
-@interface SecondViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PlaceRequestDelegate>
+@interface SecondViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PlaceRequestDelegate, UITextFieldDelegate>
 @property (nonatomic, readonly)SearchRequest currentSearchRequest;
 
 @end

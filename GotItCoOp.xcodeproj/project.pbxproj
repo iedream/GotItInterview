@@ -19,6 +19,9 @@
 		4F79C53C1E65121000D31FDD /* imageComingSoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F79C53B1E65121000D31FDD /* imageComingSoon.png */; };
 		4F79C5401E651FB900D31FDD /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F79C53F1E651FB900D31FDD /* PlaceViewController.m */; };
 		4F79C5461E65669100D31FDD /* mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F79C5451E65669100D31FDD /* mark.png */; };
+		4FC024F11E65D494000B844F /* placeLocationBackgroud.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC024F01E65D494000B844F /* placeLocationBackgroud.png */; };
+		4FC024F31E65D790000B844F /* placeCollectionBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC024F21E65D790000B844F /* placeCollectionBackground.png */; };
+		4FC024F51E65D85E000B844F /* SettingBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC024F41E65D85E000B844F /* SettingBackground.png */; };
 		A21A96E48DDE061617E13A40 /* libPods-GotItCoOp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245DB9A0D5662A027BBF8236 /* libPods-GotItCoOp.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		4F79C53E1E651FB900D31FDD /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		4F79C53F1E651FB900D31FDD /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		4F79C5451E65669100D31FDD /* mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mark.png; path = ../../Downloads/mark.png; sourceTree = "<group>"; };
+		4FC024F01E65D494000B844F /* placeLocationBackgroud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeLocationBackgroud.png; path = ../../Downloads/placeLocationBackgroud.png; sourceTree = "<group>"; };
+		4FC024F21E65D790000B844F /* placeCollectionBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeCollectionBackground.png; path = ../../Downloads/placeCollectionBackground.png; sourceTree = "<group>"; };
+		4FC024F41E65D85E000B844F /* SettingBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SettingBackground.png; path = ../../Downloads/SettingBackground.png; sourceTree = "<group>"; };
 		AA1534BEA38B680E0405F0C9 /* Pods-GotItCoOp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotItCoOp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GotItCoOp/Pods-GotItCoOp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +69,9 @@
 		4F79C50D1E64D1EF00D31FDD = {
 			isa = PBXGroup;
 			children = (
+				4FC024F41E65D85E000B844F /* SettingBackground.png */,
+				4FC024F21E65D790000B844F /* placeCollectionBackground.png */,
+				4FC024F01E65D494000B844F /* placeLocationBackgroud.png */,
 				4F79C5451E65669100D31FDD /* mark.png */,
 				4F79C53B1E65121000D31FDD /* imageComingSoon.png */,
 				4F79C5181E64D1EF00D31FDD /* GotItCoOp */,
@@ -196,6 +205,9 @@
 				4F79C53C1E65121000D31FDD /* imageComingSoon.png in Resources */,
 				4F79C5291E64D1EF00D31FDD /* Assets.xcassets in Resources */,
 				4F79C5271E64D1EF00D31FDD /* Main.storyboard in Resources */,
+				4FC024F31E65D790000B844F /* placeCollectionBackground.png in Resources */,
+				4FC024F51E65D85E000B844F /* SettingBackground.png in Resources */,
+				4FC024F11E65D494000B844F /* placeLocationBackgroud.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

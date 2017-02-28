@@ -25,6 +25,16 @@ NSString *photoCellIdentifier = @"PhotoCollectionCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeLocationBackgroud.png"]];
+    backgroundImageView.frame = self.view.frame;
+    [self.view addSubview:backgroundImageView];
+    for (UIView *view in self.view.subviews.copy) {
+        if (view != backgroundImageView) {
+            [self.view bringSubviewToFront:view];
+
+        }
+    }
+    
     _photoView.delegate = self;
     _photoView.dataSource = self;
     [_photoView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:photoCellIdentifier];

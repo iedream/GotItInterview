@@ -25,7 +25,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fgN-xf-wDU">
                                 <rect key="frame" x="0.0" y="144" width="375" height="474"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4hz-gd-SCA">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -59,14 +60,14 @@
                         <constraints>
                             <constraint firstItem="TzI-CU-n6E" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="15" id="1WB-IF-Hhl"/>
                             <constraint firstItem="dcF-vF-kug" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="1cQ-n3-EtF"/>
-                            <constraint firstItem="fgN-xf-wDU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="GBJ-gc-XZc"/>
+                            <constraint firstItem="fgN-xf-wDU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="10" id="GBJ-gc-XZc"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="fgN-xf-wDU" secondAttribute="bottom" constant="20" id="J79-QN-AGM"/>
                             <constraint firstItem="fgN-xf-wDU" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.7" id="USg-Uj-gf5"/>
                             <constraint firstAttribute="trailing" secondItem="TzI-CU-n6E" secondAttribute="trailing" id="VlP-ga-Y1U"/>
                             <constraint firstItem="TzI-CU-n6E" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="fmm-jS-OMt"/>
                             <constraint firstItem="fgN-xf-wDU" firstAttribute="top" secondItem="dcF-vF-kug" secondAttribute="bottom" constant="10" id="hPq-Ft-bSE"/>
                             <constraint firstItem="TzI-CU-n6E" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="15" id="htR-lD-sfZ"/>
-                            <constraint firstAttribute="trailing" secondItem="fgN-xf-wDU" secondAttribute="trailing" id="t6m-F8-mcX"/>
+                            <constraint firstAttribute="trailing" secondItem="fgN-xf-wDU" secondAttribute="trailing" constant="10" id="t6m-F8-mcX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="first" id="acW-dT-cKf"/>
@@ -124,7 +125,7 @@
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pl3-8s-OfL">
                                 <rect key="frame" x="155" y="510" width="64" height="30"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="submit:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="prb-gX-6O4"/>
                                 </connections>
@@ -192,7 +193,6 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-0g-d94">
                                 <rect key="frame" x="16" y="28" width="343" height="297"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -206,7 +206,8 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fco-6H-CP9">
                                 <rect key="frame" x="0.0" y="411" width="375" height="224"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ws6-cR-CFx">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -221,6 +222,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

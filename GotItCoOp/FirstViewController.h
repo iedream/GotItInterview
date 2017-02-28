@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "SecondViewController.h"
 
-@interface FirstViewController : UIViewController <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface FirstViewController : UIViewController <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
 
 @end
