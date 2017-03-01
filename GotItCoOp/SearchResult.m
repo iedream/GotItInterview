@@ -64,7 +64,7 @@ NSString *initialPhotoReady = @"initialPhotoReading";
 
 - (void)getPlaceDetail {
     [_placesClient lookUpPlaceID:_placeId callback:^(GMSPlace * _Nullable result, NSError * _Nullable error) {
-        if (result) {
+        if (!error) {
             _placeDetail.name = result.name;
             _placeDetail.address = result.formattedAddress;
             _placeDetail.phoneNumber = result.phoneNumber;

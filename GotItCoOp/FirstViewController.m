@@ -114,13 +114,13 @@ NSString *collectionCellIdentifier = @"MainTableCell";
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocationCoordinate2D currentLocation = locations.firstObject.coordinate;
-    self.currentLocation = currentLocation;
+    _currentLocation = currentLocation;
     if (!_initialized && currentLocation.latitude != 0 && currentLocation.longitude != 0) {
         _initialized = true;
         SearchRequest initialSearchRequest = {NO, -1, NO, NONE, NO, RANK_BY_PROMINENCE};
         [self searchPlaces:initialSearchRequest searchText:nil];
     }
-    self.currentLocation = currentLocation;
+    _currentLocation = currentLocation;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
